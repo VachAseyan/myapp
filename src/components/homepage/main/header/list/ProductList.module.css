@@ -1,9 +1,28 @@
 .ProductList {
-    width: auto;
-    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    gap: 20px; /* Space between product items */
+    padding: 10px; /* Optional padding around the list */
+}
+
+.productItem {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 140px;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    background-color: white; /* Optional background color */
+}
+
+.productItem.selected {
+    border: 2px solid #939393;
 }
 
 .plyus {

@@ -1,4 +1,5 @@
 import style from "./MainComponents.module.css"
+import AllProduct from "./allProducts/AllProducts";
 import Header from "./header/Header";
 import Types from "./types/Types";
 
@@ -7,6 +8,7 @@ function MainComponent() {
         <div className={style.MainComponent}>
             <Header />
             <Types />
+            <AllProduct />
         </div>
     )
 }

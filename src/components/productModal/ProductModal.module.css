@@ -1,77 +1,91 @@
-.modalContainer {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    width: 650px;
-    /* Adjust as needed */
-}
-
-.tabs {
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
-.tabButton {
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.genderContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.gender {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
     cursor: pointer;
+    padding: 5px;
+    border: 2px solid transparent;
 }
 
-.tabButton img {
+.gender img {
     width: 50px;
-    /* Adjust based on your image size */
     height: 50px;
-    object-fit: contain;
 }
 
-.tabButton.active {
-    border-bottom: 3px solid blue;
+.gender p {
+    margin: 0;
+    font-size: 12px;
 }
 
-.tabContent {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.active {
+    border-color: blue;
 }
 
-.formGroup {
-    margin-bottom: 15px;
+.input {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-.formGroup label {
+.fileLabel {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.input,
-.fileInput {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 .fileInput {
-    border: none;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.imgPreview {
+    margin-top: 10px;
 }
 
 .submitButton {
-    background-color: #007bff;
+    padding: 10px;
+    background-color: blue;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }

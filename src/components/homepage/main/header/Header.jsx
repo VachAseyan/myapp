@@ -7,7 +7,7 @@ function Header() {
     return (
         <div className={style.Header}>
             <People />
-            <ProductList/>
+            <ProductList showPlusButton={true}/>
         </div>
     )
 }
