@@ -1,0 +1,77 @@
+.modalContainer {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 650px;
+    /* Adjust as needed */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tabButton img {
+    width: 50px;
+    /* Adjust based on your image size */
+    height: 50px;
+    object-fit: contain;
+}
+
+.tabButton.active {
+    border-bottom: 3px solid blue;
+}
+
+.tabContent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input,
+.fileInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.fileInput {
+    border: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submitButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

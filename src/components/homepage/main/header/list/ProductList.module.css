@@ -1,0 +1,25 @@
+.ProductList {
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plyus {
+    width: 50px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.productItem{
+    width: 140px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,26 @@
+.People {
+    width: auto;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.peo {
+    width: 30px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.peo:hover{
+    background: blue;
+    transition: 1s
+}
+
+.peo img {
+    width: 20px;
+    height: auto;
+}
