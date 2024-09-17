@@ -8,17 +8,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
+    width: 860px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
     position: relative;
+}
+
+.modalPage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .closeButton {
@@ -31,40 +41,22 @@
     cursor: pointer;
 }
 
-.genderContainer {
+.inputList {
+    width: 465px;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
-}
-
-.gender {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    cursor: pointer;
-    padding: 5px;
-    border: 2px solid transparent;
-}
-
-.gender img {
-    width: 50px;
-    height: 50px;
-}
-
-.gender p {
-    margin: 0;
-    font-size: 12px;
-}
-
-.active {
-    border-color: blue;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .input {
     padding: 8px;
     font-size: 14px;
-    width: 100%;
+    width: 150px;
     margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
 }
 
 .fileLabel {
@@ -81,10 +73,19 @@
     margin-top: 10px;
 }
 
+.imgPreview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 .submitButton {
+    width: 160px;
     padding: 10px;
     background-color: blue;
     color: white;
+    border-radius: 25px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
     font-size: 16px;
