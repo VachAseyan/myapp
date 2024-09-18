@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import style from "./ProductModal.module.css"
-import Header from "../homepage/main/header/Header"
-import {useDispatch, useSelector} from 'react-redux';
-import {addNewProduct} from "../../store/reducers/productTypeReducer";
+import { useDispatch, useSelector } from 'react-redux';
+import { addNewProduct } from "../../store/reducers/productTypeReducer";
+import ProductList from '../homepage/main/header/list/ProductList';
+import People from "../homepage/main/header/people/People"
+import Types from '../homepage/main/types/Types';
 
 function ModalComponent({ isOpen, onClose }) {
     const [imgUrl, setImgUrl] = useState(undefined);
@@ -71,9 +73,38 @@ function ModalComponent({ isOpen, onClose }) {
 
     return (
         <div className={style.modalOverlay}>
+
             <div className={style.modal}>
+                <h2>Ավելացնել ապրանքներ</h2>
+                <div style={{
+                    height: "300px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around",
+                    flexDirection: "column"
+                }}>
+                    <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        flexDirection: "row"
+                    }} >
+                        <People />
+                        <ProductList showPlusButton={false} />
+                    </div>
+
+                    <div style={{
+                        width: "860px",
+                    }} >
+                        <Types
+                            showPlusButton={false} />
+                    </div>
+
+                </div>
+
                 <button onClick={close} className={style.closeButton}>X</button>
-                <h2>Добавить Категория</h2>
+
+
                 <div className={style.modalPage}>
                     <input
                         type="file"
@@ -92,19 +123,19 @@ function ModalComponent({ isOpen, onClose }) {
                             type="text"
                             value={article}
                             onChange={e => setArticle(e.target.value)}
-                            placeholder="Артикул" />
+                            placeholder="Համարը" />
                         <input
                             className={style.input}
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
                             type="text"
-                            placeholder="Цена" />
+                            placeholder="Գին" />
                     </div>
                 </div>
                 <button
                     className={style.submitButton}
                     onClick={add}>
-                    Добавить
+                    Ավելացնել
                 </button>
             </div>
         </div>

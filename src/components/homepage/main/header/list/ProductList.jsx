@@ -4,7 +4,7 @@ import ModalComponent from '../../../../modalComponent/ModalComponent';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFemaleSelectedIndex, changeMaleSelectedIndex } from '../../../../../store/reducers/productTypeReducer';
 
-function ProductList({ showPlusButton = true }) { // Default to true
+function ProductList({ showPlusButton = true }) { 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const filters = useSelector((state) => state.productTypeReducer.filters);
     const products = useSelector((state) => {
@@ -60,7 +60,7 @@ function ProductList({ showPlusButton = true }) { // Default to true
                     </div>
                 </div>
             ))}
-            {showPlusButton && ( // Conditionally render the + button
+            {showPlusButton && (
                 <div className={style.plyus} onClick={handleOpenModal} style={{
                     fontSize: "25px",
                     color: "gray",

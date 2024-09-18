@@ -27,17 +27,17 @@ function SubTypeModal({ onClose }) {
             <div className={styles.modalContent}>
                 <div className={styles.modalHeader}>
                     <span>{currentProduct.name}:</span>
-                    <span>Добавить Подкатегория</span>
+                    <span>Ավելացնել ենթատեսակը</span>
                     <button onClick={onClose} className={styles.closeButton}>✕</button>
                 </div>
                 <div className={styles.modalBody}>
                     <input
                       type="text"
-                      placeholder="Подкатегория"
+                      placeholder="Ենթատեսակը"
                       value={subType}
                       onChange={e => setSubType(e.target.value)}
                       className={styles.inputField} />
-                    <button onClick={add} className={styles.addButton}>Добавить</button>
+                    <button onClick={add} className={styles.addButton}>Ավելացնել</button>
                 </div>
             </div>
         </div>

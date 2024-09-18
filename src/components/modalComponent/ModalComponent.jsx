@@ -20,10 +20,10 @@ function ModalComponent({ isOpen, onClose }) {
 
     const add = () => {
         if (!name) {
-            alert('Fill the name')
+            alert('Fill the category')
             return
         }
-        
+
         if (!imgUrl) {
             alert('Select the image')
             return
@@ -34,7 +34,7 @@ function ModalComponent({ isOpen, onClose }) {
             gender,
             imgUrl
         }))
-        
+
         close()
     }
 
@@ -43,7 +43,7 @@ function ModalComponent({ isOpen, onClose }) {
         if (file) {
             const imageUrl = URL.createObjectURL(file);
             setImgUrl(imageUrl);
-          }
+        }
     }
 
     if (!isOpen) return null;
@@ -52,50 +52,56 @@ function ModalComponent({ isOpen, onClose }) {
         <div className={style.modalOverlay}>
             <div className={style.modal}>
                 <button onClick={close} className={style.closeButton}>X</button>
-                <h2>Добавить Категория</h2>
+                <h2>Ավելացնել տեսակը</h2>
                 <div className={style.mans}>
-                    <div 
+                    <div
                         className={style.gender}
                         onClick={() => setGender('female')}
                         style={{
                             cursor: 'pointer',
                             backgroundColor: gender === 'female' ? 'blue' : 'white'
                         }}>
-                        <img src={woman} alt="" />
-                        <p>Женский</p>
+                        <img style={{
+                            width: "25px",
+                            height: "25px"
+                        }} src={woman} alt="" />
+                        <p>Կանացի</p>
                     </div>
-                    <div 
+                    <div
                         className={style.gender}
                         style={{
                             cursor: 'pointer',
                             backgroundColor: gender === 'male' ? 'blue' : 'white'
                         }}
                         onClick={() => setGender('male')}>
-                        <img src={man} alt="" />
-                        <p>Мужской</p>
+                        <img style={{
+                            width: "25px",
+                            height: "25px"
+                        }} src={man} alt="" />
+                        <p>Տղամարդու</p>
                     </div>
                 </div>
-                <input 
+                <input
                     className={style.input}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    type="text" 
-                    placeholder="Категория" />
+                    type="text"
+                    placeholder="Տեսակը" />
                 <div>
-                    <label htmlFor="upload-photo">Загрузить Фото</label>
-                    <input 
-                        type="file" 
+                    <label htmlFor="upload-photo">Ներբեռնել նկարը</label>
+                    <input
+                        type="file"
                         id="upload-photo"
                         accept="image/*"
-                        onChange={handleFileChange}/>
-                    { imgUrl &&
-                        <img width={'50px'} height={'50px'} src={imgUrl}/>
+                        onChange={handleFileChange} />
+                    {imgUrl &&
+                        <img width={'50px'} height={'50px'} src={imgUrl} />
                     }
                 </div>
-                <button 
-                    className={style.submitButton} 
+                <button
+                    className={style.submitButton}
                     onClick={add}>
-                        Добавить
+                    Ավելացնել
                 </button>
             </div>
         </div>

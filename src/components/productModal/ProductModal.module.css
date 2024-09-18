@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 1000;
 }
 
@@ -16,6 +17,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 860px;
+    height: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;

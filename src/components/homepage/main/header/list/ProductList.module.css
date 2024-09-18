@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
-    gap: 20px; /* Space between product items */
-    padding: 10px; /* Optional padding around the list */
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
 }
 
 .productItem {
@@ -18,7 +18,7 @@
     border: none;
     border-radius: 5px;
     transition: border 0.3s ease;
-    background-color: white; /* Optional background color */
+    background-color: white;
 }
 
 .productItem.selected {
@@ -35,7 +35,7 @@
     border-radius: 5px;
 }
 
-.productItem{
+.productItem {
     width: 140px;
     height: 80px;
     display: flex;
