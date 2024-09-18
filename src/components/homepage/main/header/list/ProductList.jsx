@@ -7,7 +7,12 @@ import { changeFemaleSelectedIndex, changeMaleSelectedIndex } from '../../../../
 function ProductList({ showPlusButton = true }) { // Default to true
     const [isModalOpen, setIsModalOpen] = useState(false);
     const filters = useSelector((state) => state.productTypeReducer.filters);
-    const products = useSelector((state) => state.productTypeReducer.productTypes);
+    const products = useSelector((state) => {
+        if (filters.gender === 'female') {
+            return state.productTypeReducer.femaleProductTypes
+        }
+        return state.productTypeReducer.maleProductTypes
+    });
     const dispatch = useDispatch();
     const selectedIndex = filters.gender === 'female' ? filters.femaleTypeIndex : filters.maleTypeIndex
 

@@ -1,27 +1,60 @@
 import React, { useState } from 'react';
 import style from "./ProductModal.module.css"
 import Header from "../homepage/main/header/Header"
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {addNewProduct} from "../../store/reducers/productTypeReducer";
 
 function ModalComponent({ isOpen, onClose }) {
     const [imgUrl, setImgUrl] = useState(undefined);
-    const [article, setArticle] = useState('');
+    const [article, setArticle] = useState(undefined);
+    const [price, setPrice] = useState(undefined);
+
+    const filters = useSelector((state) => state.productTypeReducer.filters);
+    const isFemale = filters.gender === 'female';
+    const products = useSelector((state) => {
+        if (isFemale) {
+            return state.productTypeReducer.femaleProductTypes
+        }
+        return state.productTypeReducer.maleProductTypes
+    });
+    const currentProduct = products[isFemale ? filters.femaleTypeIndex : filters.maleTypeIndex]
+    const currentSubTypeIndex = isFemale ? filters.femaleSubTypeIndex : filters.maleSubTypeIndex
+    const currentSubType = currentProduct && currentProduct.subTypes ? currentProduct.subTypes[currentSubTypeIndex] : undefined
 
     const dispatch = useDispatch();
 
     const close = () => {
         onClose();
         setImgUrl(undefined);
-        setArticle('');
+        setArticle(undefined);
+        setPrice(undefined);
     };
 
     const add = () => {
-
+        console.log('product type', currentProduct)
+        console.log('product sub type', currentSubType)
+        if (!currentProduct || !currentSubType) {
+            alert('Select types')
+            return;
+        }
         if (!imgUrl) {
             alert('Select the image');
             return;
         }
+        if (!article) {
+            alert('Select the article');
+            return;
+        }
+        if (!price) {
+            alert('Select the price');
+            return;
+        }
 
+        dispatch(addNewProduct({
+            article,
+            price,
+            imgUrl
+        }))
 
         close();
     };
@@ -57,11 +90,13 @@ function ModalComponent({ isOpen, onClose }) {
                         <input
                             className={style.input}
                             type="text"
+                            value={article}
+                            onChange={e => setArticle(e.target.value)}
                             placeholder="Артикул" />
                         <input
                             className={style.input}
-                            value={article}
-                            onChange={(e) => setArticle(e.target.value)}
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
                             type="text"
                             placeholder="Цена" />
                     </div>
